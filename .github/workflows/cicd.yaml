@@ -7,7 +7,6 @@ on:
 
 jobs:
   terraform:
-    name: Terraform Plan and Apply
     runs-on: ubuntu-latest
 
     steps:
@@ -25,6 +24,10 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Export correct Terraform Variables
+        run: |
+          echo "TF_VAR_key_name=${{ secrets.TF_VAR_KEY_NAME }}" >> $GITHUB_ENV
 
       - name: Terraform Init
         run: terraform init
