@@ -1,4 +1,4 @@
-# autoscaling-Loadbalancer FINAL README.md for your Terraform + GitHub Actions Project
+
 
 # 🚀 AWS Auto Scaling Infrastructure with Terraform and GitHub Actions CI/CD
 
